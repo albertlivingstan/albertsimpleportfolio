@@ -1,0 +1,146 @@
+.download-btn-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  min-width: 180px;
+  padding: 4px 6px 4px 20px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), 0 0 15px rgba(6, 182, 212, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff;
+}
+
+.download-btn-pill:hover:not(:disabled) {
+  border-color: #00d2ff;
+  box-shadow: 0 6px 24px rgba(0, 210, 255, 0.35), 0 0 20px rgba(6, 182, 212, 0.4);
+  transform: translateY(-2px);
+}
+
+.download-btn-pill:disabled {
+  cursor: default;
+}
+
+/* Background Animated Fill Track */
+.download-btn-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #00a8ff 0%, #00d2ff 60%, #0ea5e9 100%);
+  border-radius: 999px;
+  transition: width 0.1s linear;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+.download-btn-pill.done .download-btn-fill {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+  transition: background 0.4s ease, width 0.3s ease;
+}
+
+/* Foreground Content */
+.download-btn-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.download-btn-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.download-icon-idle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.download-percent-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  animation: pulseText 1.5s infinite ease-in-out;
+}
+
+.download-done-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Circular Right Disc */
+.download-btn-disc {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn-pill:hover:not(:disabled) .download-btn-disc {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(2px);
+}
+
+.disc-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.disc-icon.spinning {
+  animation: discPulse 1.2s infinite ease-in-out;
+}
+
+.disc-icon.check {
+  font-size: 1.1rem;
+  color: #ffffff;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes discPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

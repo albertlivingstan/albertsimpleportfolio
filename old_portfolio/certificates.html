@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates | Albert Livingstan G</title>
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      background: #020617;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      text-align: center;
+      padding: 15px;
+      background: #020617;
+    }
+
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 60px 10%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-left: 5px solid #38bdf8;
+      padding-left: 15px;
+    }
+
+    .certificates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    /* CARD */
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease,
+                  opacity 0.8s ease, transform 0.8s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .card.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 45px rgba(56,189,248,0.35);
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 10px;
+      cursor: zoom-in;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      color: #cbd5f5;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      animation: zoom 0.3s ease;
+    }
+
+    @keyframes zoom {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      position: absolute;
+      top: 25px;
+      right: 40px;
+      font-size: 40px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  
+<header>
+  <h1>My Certificates</h1>
+</header>
+
+<nav>
+  <a href="index.html">← Back to Portfolio</a>
+</nav>
+
+<section>
+  <h2>Certifications & Training</h2>
+
+  <div class="certificates">
+
+    <div class="card">
+      <img src="images/Azure Data..png" alt="Azure Data Fundamentals">
+      <div class="card-content">
+        <h3>Microsoft Azure Data Fundamentals</h3>
+        <p>Issued on October 15, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/MongoDB Python Developer Path.png" alt="MongoDB Python">
+      <div class="card-content">
+        <h3>MongoDB Python Developer Path</h3>
+        <p>Completed on October 26, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/java fundamentals.png" alt="Java Fundamentals">
+      <div class="card-content">
+        <h3>Java Programming Fundamentals (Infosys)</h3>
+        <p>Completed on October 19, 2024</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/User Experience Design Fundamentals.png" alt="UX Design">
+      <div class="card-content">
+        <h3>User Experience Design Fundamentals (IBM)</h3>
+        <p>Completed on August 11, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/GK HACKS.png" alt="Google Hckathon">
+      <div class="card-content">
+        <h3> Google Hckathon</h3>
+        <p>Certified on October 17, 2025 </p>
+      </div>
+
+      </div>
+    <div class="card">
+      <img src="images/Foundations of Digital Marketing and E-commerce.png" alt="Foundations of Digital Marketing and E-commerce">
+      <div class="card-content">
+        <h3>Foundations of Digital Marketing and E-commerce</h3>
+        <p>Completed on February 28, 2026</p>
+      </div> 
+      
+    </div>
+    <div class="card">
+      <img src="images/HTML Essentials.png" alt="HTML">
+      <div class="card-content">
+        <h3>HTML Essentials (Cisco)</h3>
+        <p>Completed on August 23, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/css.png" alt="CSS">
+      <div class="card-content">
+        <h3>CSS Essentials (Cisco)</h3>
+        <p>Completed on September 05, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/js.png" alt="JavaScript">
+      <div class="card-content">
+        <h3>JavaScript Essentials</h3>
+        <p>Completed on September 03, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/MACHINE learning.png" alt="Machine Learning">
+      <div class="card-content">
+        <h3>Machine Learning using Python</h3>
+        <p>Completed on October 23, 2024</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/SQL Certification Course.png" alt="SQL">
+      <div class="card-content">
+        <h3>SQL Certification</h3>
+        <p>Completed on October 06, 2024</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Ethics, Technology and Engineering.png" alt="Ethics">
+      <div class="card-content">
+        <h3>Ethics, Technology and Engineering</h3>
+        <p>Completed on April 05, 2024</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Enterprise Security in Practice.png" alt="Enterprise Security">
+      <div class="card-content">
+        <h3>Enterprise Security in Practice</h3>
+        <p>Completed on August 11, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/os.png" alt="Operating Systems">
+      <div class="card-content">
+        <h3>Operating Systems</h3>
+        <p>Completed on May 05, 2025</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/programing essintial in c.png" alt="programing essintial in c">
+      <div class="card-content">
+        <h3>programing essintial in C </h3>
+        <p>Completed on November 07, 2023</p>
+      </div>
+    </div>
+
+  <div class="card">
+      <img src="images/Website UI:UX Designing using ChatGPT.png" alt="programing essintial in c">
+      <div class="card-content">
+        <h3>Website UI:UX Designing using ChatGPT </h3>
+        <p>Completed on October 19, 2024</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Networking Essentials.png" alt="Networking Essentialsc">
+      <div class="card-content">
+        <h3>Networking Essentials</h3>
+        <p>Completed on June 29, 2024</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Introduction to Packet Tracer.png" alt="Introduction to Packet Tracer">
+      <div class="card-content">
+        <h3>Introduction to Packet Tracer</h3>
+        <p>Completed on June 28, 2024</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/How to create a Jira SCRUM project.png" alt="How to create a Jira SCRUM project">
+      <div class="card-content">
+        <h3>How to create a Jira SCRUM project</h3>
+        <p>Completed on July 30, 2025</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/SIH(Smart India hackathon).png" alt="SIH(Smart India hackathon)">
+      <div class="card-content">
+        <h3>SIH(Smart India hackathon)</h3>
+        <p>Certified of participating SIH(Smart India hackathon)</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Artificial Intelligence.png" alt="Artificial Intelligence">
+      <div class="card-content">
+        <h3>Artificial Intelligence</h3>
+        <p>Completed on October 19, 2024</p>
+      </div> 
+      </div>
+    <div class="card">
+      <img src="images/Quantitative Aptitude.png" alt="Quantitative Aptitude">
+      <div class="card-content">
+        <h3>Quantitative Aptitude</h3>
+        <p>Completed on February 23, 2026</p>
+      </div> 
+
+    </div>
+    <div class="card">
+      <img src="images/Logical Reasoning.png" alt="Logical Reasoning">
+      <div class="card-content">
+        <h3>Logical Reasoning</h3>
+        <p>Completed on February 23, 2026</p>
+      </div> 
+
+      </div>
+    <div class="card">
+      <img src="images/Introduction to Linux (LFS101).png" alt="Introduction to Linux (LFS101)">
+      <div class="card-content">
+        <h3>Introduction to Linux (LFS101)</h3>
+        <p>Completed on February 27, 2026</p>
+      </div> 
+
+  </div>
+    <div class="card">
+      <img src="images/Data Interpretation.png" alt="Data Interpretation">
+      <div class="card-content">
+        <h3>Data Interpretation</h3>
+        <p>Completed on February 23, 2026</p>
+      </div> 
+
+  </div>
+    <div class="card">
+      <img src="images/Describe cloud service types.png" alt="Describe cloud service types">
+      <div class="card-content">
+        <h3>Describe cloud service types</h3>
+        <p>Completed on June 10, 2025</p>
+      </div> 
+
+  </div>
+    <div class="card">
+      <img src="images/Verbal.png" alt="Verbal">
+      <div class="card-content">
+        <h3>Verbal</h3>
+        <p>Completed on March 8, 2026</p>
+      </div> 
+    
+  </div>
+    <div class="card">
+      <img src="images/Data Analytics Essentials.png" alt="Data Analytics Essentials">
+      <div class="card-content">
+        <h3>Data Analytics Essentials</h3>
+        <p>Completed on September 03, 2025</p>
+      </div> 
+
+  </div>
+    <div class="card">
+      <img src="images/AWS_Cloud_Practitioner_Essentials.png" alt="AWS Cloud Practitioner Essentials">
+      <div class="card-content">
+        <h3>AWS Cloud Practitioner Essentials</h3>
+        <p>Completed on March 12, 2026</p>
+      </div> 
+
+  </div>
+    <div class="card">
+      <img src="images/Cybersecurity Essentials.png" alt="Cybersecurity Essentials">
+      <div class="card-content">
+        <h3>Cybersecurity Essentials</h3>
+        <p>Completed on March 28, 2026</p>
+      </div> 
+
+</div>
+</section>
+
+<footer>
+  <p>© 2026 Albert Livingstan G</p>
+</footer>
+
+<!-- IMAGE MODAL -->
+<div id="previewModal" class="modal">
+  <span class="close">&times;</span>
+  <img id="previewImage">
+</div>
+
+<script>
+  const modal = document.getElementById("previewModal");
+  const modalImg = document.getElementById("previewImage");
+  const closeBtn = document.querySelector(".close");
+
+  // Image preview
+  document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = () => modal.style.display = "none";
+  modal.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+
+  // Smooth scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".card").forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

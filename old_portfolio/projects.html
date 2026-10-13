@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects | Albert Livingstan G</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+header, nav, footer {
+  background: #020617;
+  text-align: center;
+}
+
+header { padding: 50px 20px; }
+header h1 { font-size: 2.5rem; }
+nav { padding: 15px; }
+nav a { color: #38bdf8; text-decoration: none; }
+section { padding: 60px 10%; }
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  border-left: 5px solid #38bdf8;
+  padding-left: 15px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #020617;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: 0.4s;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(56,189,248,0.35);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content { padding: 20px; }
+.card h3 { color: #38bdf8; margin-bottom: 10px; }
+footer { padding: 20px; color: #94a3b8; }
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #020617;
+  width: 90%;
+  max-width: 850px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  padding: 20px;
+  animation: zoom 0.3s ease;
+}
+
+.modal-content h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.modal img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Responsive video box */
+.video-box {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-bottom: 15px;
+}
+
+.video-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.gallery-controls button {
+  background: #38bdf8;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #020617;
+  font-weight: bold;
+}
+
+.close {
+  position: sticky;
+  top: 0;
+  float: right;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>My Projects</h1>
+</header>
+
+<nav>
+  <a href="index.html">← Back to Portfolio</a>
+</nav>
+
+<section>
+<h2>Featured Projects</h2>
+
+<div class="projects">
+
+<div class="card" onclick="openProject('fittrack')">
+  <img src="images/fittrack/fittrackpr.png" alt="">
+  <div class="card-content">
+    <h3>FitTrack</h3>
+    <p>Health & fitness tracking platform with reminders.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openProject('MINDKRAFT26_CHESS_TOURNAMENT')">
+  <img src="images/MINDKRAFT'26_CHESS_TOURNAMENT/Screenshot 2026-03-07 at 11.05.22 PM.png" alt="">
+  <div class="card-content">
+    <h3>CHESS_TOURNAMENT</h3>
+    <p>Chess tournament management system.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openProject('robot')">
+  <img src="images/human/human follwing.png" alt="">
+  <div class="card-content">
+    <h3>Human Following Robot</h3>
+    <p>Robot that tracks humans using sensors.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openProject('MVRbookme')">
+  <img src="images/mvrbook me/1741959241378.jpeg" alt="">
+  <div class="card-content">
+    <h3>MVRbookme</h3>
+    <p>Movie ticket booking with cab & snacks.</p>
+  </div>
+</div>
+
+<div class="card" onclick="openProject('ChaosOps')">
+  <img src="images/ChaosOps/Screenshot 2026-04-14 at 9.29.39 AM.png" alt="">
+  <div class="card-content">
+    <h3>ChaosOps</h3>
+    <p>DevOps automation tools.</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<footer>
+  © 2026 Albert Livingstan G
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle"></h3>
+
+    <div class="gallery-controls">
+      <button onclick="prevImage()">◀ Prev</button>
+      <button onclick="nextImage()">Next ▶</button>
+    </div>
+
+    <img id="modalImage">
+
+    <div class="video-box">
+      <iframe id="modalVideo"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let currentImages = [];
+let currentIndex = 0;
+
+const projects = {
+  fittrack: {
+    title: "FitTrack – Health & Fitness App",
+    images: [
+      "images/fittrack/Screenshot 2025-10-30 at 8.05.56 PM.png",
+      "images/fittrack/Screenshot 2025-10-30 at 10.45.51 PM.png",
+      "images/fittrack/1767213388479.jpeg",
+      "images/fittrack/Web Development Internship.png"
+    ],
+    video: "1164942668"
+  },
+
+  robot: {
+    title: "Human Following Robot",
+    images: [
+      "images/human/human.jpeg",
+      "images/human/robo.jpeg",
+      "images/human/1739603575625.jpeg"
+    ],
+    video: "1164942922"
+  },
+
+  MVRbookme: {
+    title: "MVRbookme – Movie Ticket Booking System",
+    images: [
+      "images/mvrbook me/1741959241378.jpeg",
+      "images/mvrbook me/1741959221741.jpeg",
+      "images/mvrbook me/Nexus Global Solutions.png"
+    ],
+    video: "1164942938"
+  },
+
+  MINDKRAFT26_CHESS_TOURNAMENT: {
+    title: "MINDKRAFT'26_CHESS_TOURNAMENT",
+    images: [
+      "images/MINDKRAFT'26_CHESS_TOURNAMENT/Screenshot 2026-03-18 at 12.48.10 PM.png",
+      "images/MINDKRAFT'26_CHESS_TOURNAMENT/Screenshot 2026-03-18 at 12.48.19 PM.png",
+      "images/MINDKRAFT'26_CHESS_TOURNAMENT/Screenshot 2026-03-18 at 12.48.43 PM.png",
+      "images/MINDKRAFT'26_CHESS_TOURNAMENT/Screenshot 2026-03-18 at 12.48.34 PM.png",
+      "images/MINDKRAFT'26_CHESS_TOURNAMENT/Screenshot 2026-03-18 at 12.48.51 PM.png"
+    ],
+    video: "1171350769"
+  },
+
+  
+  ChaosOps: {
+    title: "ChaosOps",
+    images: [
+      "images/ChaosOps/Screenshot 2026-04-10 at 11.47.01 PM.png",
+      "images/ChaosOps/Screenshot 2026-04-10 at 11.47.19 PM.png",
+      "images/ChaosOps/Screenshot 2026-04-14 at 9.27.47 AM.png",
+      "images/ChaosOps/Screenshot 2026-04-14 at 9.34.02 AM.png"
+    ],
+    video: "1182855681"
+  }
+};
+
+
+function openProject(key) {
+  const data = projects[key];
+  currentImages = data.images;
+  currentIndex = 0;
+
+  document.getElementById("modalTitle").innerText = data.title;
+  document.getElementById("modalImage").src = currentImages[0];
+
+  const iframe = document.getElementById("modalVideo");
+  iframe.src = `https://player.vimeo.com/video/${data.video}?title=0&byline=0&portrait=0`;
+
+  document.getElementById("projectModal").style.display = "flex";
+}
+
+function closeModal() {
+  const iframe = document.getElementById("modalVideo");
+  iframe.src = "";
+  document.getElementById("projectModal").style.display = "none";
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  document.getElementById("modalImage").src = currentImages[currentIndex];
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById("modalImage").src = currentImages[currentIndex];
+}
+
+/* Scroll Reveal */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => e.isIntersecting && e.target.classList.add("reveal"));
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".card").forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

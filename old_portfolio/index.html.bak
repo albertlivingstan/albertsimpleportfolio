@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Albert Livingstan G | Portfolio</title>
+
+  <!-- Devicon CSS for developer icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <style>
+    /* (All your previous styles remain unchanged) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #020617, #020617);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      background: #020617;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      padding: 60px 10%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-left: 5px solid #38bdf8;
+      padding-left: 15px;
+    }
+
+    .about p {
+      max-width: 800px;
+      color: #cbd5f5;
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Cards styles with flex and animation */
+    .card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      min-height: 100px;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(56,189,248,0.35);
+}
+
+    /* Heading on left, consistent width */
+    .card h3 {
+      margin-bottom: 0;
+      color: #38bdf8;
+      flex-shrink: 0;
+      min-width: 160px;
+      font-size: 1.2rem;
+    }
+
+  .cert-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+
+
+    /* Icon container for skills only */
+    .card .icon {
+      font-size: 3rem;
+      color: #38bdf8;
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Placeholder icon for certificates and projects to keep alignment */
+    .card .placeholder-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #38bdf8;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px 15px 0 0;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact a:hover {
+      color: #60a5fa;
+    }
+
+    .card h3 a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .coding-link {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+
+/* Coding Profile Progress Bars */
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background: #38bdf8;
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Different platform widths */
+.leetcode-progress {
+  width: 75%;
+}
+
+.gfg-progress {
+  width: 65%;
+}
+
+.hackerrank-progress {
+  width: 85%;
+}
+.hackerrank-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.hackerrank-link {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.gfg-link {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.coding-platform-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.gfg-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.hackerrank-icon-img {
+  width: 45px;
+  height: 45px;
+}
+
+.gfg-icon-img {
+  width: 45px;
+  height: 45px;
+}
+
+.hackerrank-icon-img {
+  width: 45px;
+  height: 45px;
+}
+
+.icon img {
+  width: 45px;
+  height: 45px;
+}
+
+.gfg-link,
+.hackerrank-link {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.coding-platform-links {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.coding-platform-links:hover {
+  color: #60a5fa;
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Albert Livingstan G</h1>
+  <p>B.Tech Computer Science and Engineering Student | Aspiring Software Developer</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="certificates.html">Certificates</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    I am a B.Tech Computer Science and Engineering student with a strong interest in web development, AI, and IoT-based systems. I enjoy building real-world projects that solve practical problems and enhance user experience. I am currently seeking placement opportunities where I can apply my skills and grow as a professional.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="card">
+      <div class="icon"><i class="devicon-html5-plain colored"></i></div>
+      <div>
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JavaScript, React</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="devicon-nodejs-plain colored"></i></div>
+      <div>
+        <h3>Backend</h3>
+        <p>Node.js, Express</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="devicon-mongodb-plain colored"></i></div>
+      <div>
+        <h3>Database</h3>
+        <p>MongoDB, SQL</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="devicon-python-plain colored"></i></div>
+      <div>
+        <h3>AI / Data Science</h3>
+        <p>Python, Machine Learning Basics</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="devicon-git-plain colored"></i></div>
+      <div>
+        <h3>Tools</h3>
+        <p>Git, GitHub, VS Code</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="coding">
+  <h2>Coding Profiles</h2>
+
+  <div class="projects">
+
+    <!-- LeetCode -->
+    <div class="card">
+      <div class="icon">
+        <i class="devicon-leetcode-plain colored"></i>
+      </div>
+      <div>
+        <h3> <a href="https://leetcode.com/u/Albert_Livingstan/" target="_blank" rel="noopener noreferrer" class="coding-link">LeetCode</a></h3>
+        <p>Problems Solved: 150+</p>
+        <div class="progress-bar">
+          <div class="progress leetcode-progress"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- GeeksforGeeks -->
+<div class="card">
+  <div class="icon">
+    <img src="https://cdn.simpleicons.org/geeksforgeeks/2F8D46"
+        alt="GeeksforGeeks"
+        style="width:45px; height:45px;">
+  </div>
+  <div>
+    <h3>
+        <a href="https://www.geeksforgeeks.org/profile/albertliv4u7m/"
+        target="_blank"
+        style="color:#38bdf8; text-decoration:none;">
+        GeeksforGeeks
+      </a>
+    </h3>
+    <p>Problems Solved: 120+</p>
+    <div class="progress-bar">
+      <div class="progress gfg-progress"></div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- HackerRank -->
+<div class="card">
+  <div class="icon">
+    <img src="https://cdn.simpleicons.org/hackerrank/00EA64"
+        alt="HackerRank"
+        style="width:45px; height:45px;">
+  </div>
+  <div>
+    <h3>
+      <a href="https://www.hackerrank.com/profile/albertlivingstan"
+        target="_blank"
+        style="color:#38bdf8; text-decoration:none;">
+        HackerRank
+      </a>
+    </h3>
+    <p>1★ in Python | 3★ in C Problem Solving</p>
+    <div class="progress-bar">
+      <div class="progress hackerrank-progress"></div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+<section id="certificates">
+  <h2>Certificates</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <img src="images/How to create a Jira SCRUM project.png" alt="Introduction to IoT Certificate" class="cert-img">
+      <div>
+        <h3>Introduction to IoT</h3>
+        <p>Certified on August 20, 2024 for completing the Introduction to IoT course.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Website UI:UX Designing using ChatGPT.png" alt="UI UX Certificate" class="cert-img">
+      <div>
+        <h3>Website UI/UX Designing using ChatGPT</h3>
+        <p>Completed professional UI/UX design training on October 19, 2024.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/GK HACKS.png" alt="Hack & Build Boot Camp Certificate" class="cert-img">
+      <div>
+        <h3>GK HACKS </h3>
+        <p>Participated in an intensive Google Hacks focused on real-world project development and innovation.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <div class="placeholder-icon"></div>
+      <div>
+        <h3>TaskFlow – Smart Task Management System</h3>
+        <p>Full-stack task management system with authentication, task tracking, and clean UI.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="placeholder-icon"></div>
+      <div>
+        <h3>MVRbookme</h3>
+        <p>Movie ticket booking website with cab scheduling feature for on-time arrival.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="placeholder-icon"></div>
+      <div>
+        <h3>IoT & Embedded Projects</h3>
+        <p>Sensor-based systems using ESP32, Flex sensors, and automation concepts.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="placeholder-icon"></div>
+      <div>
+        <h3>AI Mini Projects</h3>
+        <p>AI-driven systems involving ML basics, automation, and intelligent applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <a href="mailto:albertlivingstan73@gmail.com">Email</a>
+  <a href="https://github.com/albertlivingstan" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://www.linkedin.com/in/albert-livingstan-g" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</section>
+
+
+
+
+
+<footer>
+  <p>© 2026 Albert Livingstan G | Portfolio</p>
+</footer>
+
+<script>
+  // On scroll fade-in animation
+  const sections = document.querySelectorAll('section');
+  const cards = document.querySelectorAll('.card');
+
+  function checkVisibility() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if(sectionTop < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if(cardTop < triggerBottom) {
+        card.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('load', checkVisibility);
+</script>
+
+</body>
+</html>

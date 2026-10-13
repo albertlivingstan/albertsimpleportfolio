@@ -1,0 +1,225 @@
+.send-button-animated {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  height: 50px;
+  padding: 0 1.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  user-select: none;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.send-button-animated:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.55), 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.send-button-animated:disabled {
+  cursor: default;
+}
+
+.send-button-animated.sent {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5);
+}
+
+.send-button-animated.crashing {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.5);
+  animation: shakeButton 0.4s ease-in-out;
+}
+
+.send-btn-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.send-btn-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.send-icon-idle {
+  font-size: 0.9rem;
+  transition: transform 0.25s ease;
+}
+
+.send-button-animated:hover .send-icon-idle {
+  transform: translateX(3px) translateY(-3px);
+}
+
+/* Paper Plane Wrapper & Animations */
+.paper-plane-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.paper-plane-wrapper.folding {
+  animation: sb-fold 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.paper-plane-wrapper.flying {
+  animation: sb-fly 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.paper-plane-wrapper.crashing {
+  animation: sb-crash 0.9s ease-in-out forwards;
+}
+
+.paper-plane-svg {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* Keyframes */
+@keyframes sb-fold {
+  0% { transform: scale(0.6) rotate(0deg); opacity: 0.4; }
+  45% { transform: scale(0.9) rotate(25deg); opacity: 0.8; }
+  70% { transform: scale(1.1) rotate(40deg); opacity: 1; }
+  100% { transform: scale(1) rotate(55deg); opacity: 1; }
+}
+
+@keyframes sb-fly {
+  0% { transform: translate(0, 0) rotate(55deg) scale(1); opacity: 1; }
+  50% { transform: translate(120px, -70px) rotate(60deg) scale(1.1); opacity: 0.9; }
+  100% { transform: translate(320px, -180px) rotate(65deg) scale(0.4); opacity: 0; }
+}
+
+@keyframes sb-crash {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  30% { transform: translate(30px, -20px) rotate(45deg) scale(1.1); opacity: 1; }
+  60% { transform: translate(60px, 15px) rotate(180deg) scale(0.9); opacity: 0.9; }
+  100% { transform: translate(90px, 80px) rotate(250deg) scale(0.2); opacity: 0; }
+}
+
+@keyframes shakeButton {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* Smoke Trail Lines for Crash */
+.smoke-lines {
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  display: flex;
+  gap: 4px;
+}
+
+.smoke-puff {
+  font-size: 0.8rem;
+  animation: fadePuff 0.6s infinite ease-out;
+}
+
+.smoke-puff.p1 { animation-delay: 0s; }
+.smoke-puff.p2 { animation-delay: 0.2s; }
+
+@keyframes fadePuff {
+  0% { opacity: 1; transform: scale(0.6) translateY(0); }
+  100% { opacity: 0; transform: scale(1.4) translateY(-15px); }
+}
+
+/* Wind speed trail lines */
+.wind-lines {
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  pointer-events: none;
+}
+
+.wind-line {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  animation: windPulse 0.4s ease-out infinite alternate;
+}
+
+.wind-line.l1 { width: 22px; margin-left: 0; }
+.wind-line.l2 { width: 30px; margin-left: -8px; }
+.wind-line.l3 { width: 18px; margin-left: -4px; }
+
+@keyframes windPulse {
+  0% { opacity: 0.4; transform: scaleX(0.7); }
+  100% { opacity: 0.9; transform: scaleX(1.2); }
+}
+
+.send-btn-sent, .send-btn-error-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  animation: popSent 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.check-icon-sent {
+  font-size: 1.1rem;
+}
+
+@keyframes popSent {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Sad Emoji Popover */
+.sad-emoji-popover {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(239, 68, 68, 0.95);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+  animation: sadPopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 20;
+}
+
+.sad-emoji {
+  font-size: 1.2rem;
+  animation: tearShake 0.5s infinite alternate;
+}
+
+@keyframes sadPopIn {
+  0% { opacity: 0; transform: translate(-50%, 10px) scale(0.7); }
+  100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+@keyframes tearShake {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-3px) rotate(-8deg); }
+}
