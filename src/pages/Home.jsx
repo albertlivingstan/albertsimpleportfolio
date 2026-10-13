@@ -30,6 +30,8 @@ export default function Home() {
     if (id) requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView());
   }, [location]);
   useEffect(() => { if (!copied) return; const timer = setTimeout(() => setCopied(false), 2500); return () => clearTimeout(timer); }, [copied]);
+  useEffect(() => { const handler = () => setIntro(true); window.addEventListener('openIntroVideo', handler); return () => window.removeEventListener('openIntroVideo', handler); }, []);
+
   async function copyEmail() {
     try { await navigator.clipboard.writeText('albertlivingstan73@gmail.com'); setCopied(true); setCopyStatus('Email copied.'); }
     catch { setCopyStatus('Copy unavailable. Email: albertlivingstan73@gmail.com'); }
