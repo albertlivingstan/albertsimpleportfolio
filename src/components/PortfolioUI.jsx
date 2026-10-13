@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Menu, X, Download } from 'lucide-react';
-export const resume = '/Albert_Livingstan_G_Resume.pdf';
+export const resume = '/Albert_Livingstan_G-2.pdf';
 export function Reveal({ children, className = '', delay = 0 }) {
   const reduced = useReducedMotion();
   return <motion.div className={className} initial={reduced ? false : { opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: .6, delay, ease: [.22, 1, .36, 1] }}>{children}</motion.div>;

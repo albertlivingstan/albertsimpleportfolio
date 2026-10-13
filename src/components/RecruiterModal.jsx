@@ -207,8 +207,8 @@ const RecruiterModal = ({ isOpen, onClose }) => {
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <DownloadButton
                   label="Download Resume (PDF)"
-                  fileUrl="/Albert_Livingstan_G_Resume.pdf"
-                  fileName="Albert_Livingstan_G_Resume.pdf"
+                  fileUrl="/Albert_Livingstan_G-2.pdf"
+                  fileName="Albert_Livingstan_G-2.pdf"
                   onClick={handleDownload}
                   style={{ flex: 1, minWidth: '200px' }}
                 />

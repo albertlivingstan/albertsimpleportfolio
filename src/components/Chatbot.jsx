@@ -125,8 +125,8 @@ const KB = [
     reply: "Sure! Downloading Albert's resume now... 📄",
     action: () => {
       const link = document.createElement('a');
-      link.href = '/Albert_Livingstan_G(urk23cs1099).pdf';
-      link.download = 'Albert_Livingstan_G(urk23cs1099).pdf';
+      link.href = '/Albert_Livingstan_G-2.pdf';
+      link.download = 'Albert_Livingstan_G-2.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

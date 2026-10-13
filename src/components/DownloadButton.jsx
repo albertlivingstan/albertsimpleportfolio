@@ -14,8 +14,8 @@ export function formatPercent(p) {
 }
 
 export default function DownloadButton({
-  fileUrl = '/Albert_Livingstan_G_Resume.pdf',
-  fileName = 'Albert_Livingstan_G_Resume.pdf',
+  fileUrl = '/Albert_Livingstan_G-2.pdf',
+  fileName = 'Albert_Livingstan_G-2.pdf',
   label = 'Resume',
   simulateMs = 2600,
   autoResetMs = 2200,
