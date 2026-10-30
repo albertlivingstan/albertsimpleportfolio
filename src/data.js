@@ -215,6 +215,29 @@ export const projectsData = [
     tags: ['React', 'Firebase', 'Gemini API', 'Tailwind CSS']
   },
   {
+    id: 'smartschedule',
+    github: 'https://github.com/albertlivingstan/SmartSchedule.git',
+    title: 'SmartSchedule AI 3.0',
+    desc: 'Enterprise RPA & AI-driven appointment orchestration platform featuring deterministic constraint scheduling, predictive ML no-show risk tiers, and UiPath automation.',
+    liveDemo: 'https://smartschedule-frontend.vercel.app',
+    mainImg: 'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.31.23 PM.png',
+    images: [
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.31.23 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.31.30 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.31.38 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.31.45 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.31.52 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.31.59 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.32.06 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.32.15 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.32.22 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-30 at 9.32.29 PM.png',
+      'images/SmartSchedule AI 3.0/Screenshot 2026-10-28 at 8.31.25 PM.png'
+    ],
+    video: '1241358236',
+    tags: ['FastAPI', 'React', 'UiPath RPA', 'Machine Learning']
+  },
+  {
     id: 'fittrack',
     github: 'https://github.com/albertlivingstan/Fitness-tracker.git',
     title: 'FitTrack – Health & Fitness App',

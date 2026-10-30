@@ -8,7 +8,7 @@ import { Spotlight } from '../components/ui/Spotlight';
 import ProjectModal from '../components/ProjectModal';
 const Chatbot = lazy(() => import('../components/Chatbot'));
 const categories = ['All work', 'Web applications', 'AI & automation', 'IoT'];
-const categoryFor = p => p.id === 'robot' ? 'IoT' : ['ChaosOps', 'studyhub', 'SolarAQI'].includes(p.id) ? 'AI & automation' : 'Web applications';
+const categoryFor = p => p.id === 'robot' ? 'IoT' : ['ChaosOps', 'studyhub', 'SolarAQI', 'smartschedule'].includes(p.id) ? 'AI & automation' : 'Web applications';
 const skills = [
   { icon: Code2, title: 'Interface & experience', subtitle: 'Thoughtful interfaces, from layout to interaction.', stack: ['React', 'JavaScript', 'TypeScript', 'HTML & CSS', 'Tailwind CSS'] },
   { icon: Layers, title: 'Systems & backend', subtitle: 'The services and data behind the experience.', stack: ['Node.js', 'Python', 'Java', 'FastAPI', 'Flask', 'Django', 'MongoDB', 'MySQL'] },
