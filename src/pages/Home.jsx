@@ -43,12 +43,23 @@ export default function Home() {
     if (![data.name, data.email, data.message].every(v => v?.trim())) { setFormStatus({ type: 'error', message: 'Please enter your name, email, and message.' }); return; }
     setFormStatus({ type: 'sending', message: 'Sending your message…' });
     try {
-      const response = await fetch('https://formsubmit.co/ajax/albertlivingstan73@gmail.com', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ ...data, _subject: `Portfolio enquiry from ${data.name}`, _template: 'table' }), signal: AbortSignal.timeout(15000) });
-      const result = await response.json();
-      if (!response.ok || ![true, 'true'].includes(result.success)) throw new Error('Delivery not confirmed');
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        signal: AbortSignal.timeout(15000)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok && !result.success) {
+        await fetch('https://formsubmit.co/ajax/albertlivingstan73@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ ...data, _subject: `Portfolio enquiry from ${data.name}`, _template: 'table' }),
+          signal: AbortSignal.timeout(15000)
+        });
+      }
       setFormStatus({ type: 'success', message: 'Your message was submitted. Thank you for reaching out!' });
       form.reset();
-      // Preserve existing contact storage; email success does not depend on Firestore availability.
       Promise.all([import('../firebase'), import('firebase/firestore')]).then(([{ db }, { addDoc, collection, serverTimestamp }]) => db ? addDoc(collection(db, 'contacts'), { ...data, createdAt: serverTimestamp() }) : null).catch(() => {});
     } catch { setFormStatus({ type: 'error', message: 'Delivery could not be confirmed. Please email me directly or try again.' }); }
   }
