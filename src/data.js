@@ -215,6 +215,26 @@ export const projectsData = [
     tags: ['React', 'Firebase', 'Gemini API', 'Tailwind CSS']
   },
   {
+    id: 'safefactory',
+    github: 'https://github.com/albertlivingstan/SafeFactory_Android.git',
+    title: 'SafeFactory 3D: Industrial Digital Twin',
+    desc: 'An interactive 3D digital twin and industrial safety platform featuring real-time IoT sensor telemetry, dynamic hazard detection, and automated 3D escape route rerouting.',
+    liveDemo: 'https://safefactoryandroid.vercel.app',
+    mainImg: 'images/SafeFactory_Android/Screenshot 2026-10-31 at 11.31.13 AM.png',
+    images: [
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 11.31.13 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 10.54.32 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 10.53.36 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 10.53.47 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 10.54.13 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 10.54.40 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 10.55.02 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 11.09.44 AM.png',
+      'images/SafeFactory_Android/Screenshot 2026-10-31 at 11.10.14 AM.png'
+    ],
+    tags: ['Android', '3D WebGL', 'IoT Digital Twin', 'Industrial Safety']
+  },
+  {
     id: 'smartschedule',
     github: 'https://github.com/albertlivingstan/SmartSchedule.git',
     title: 'SmartSchedule AI 3.0',
