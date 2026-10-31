@@ -38,6 +38,10 @@ export default async function handler(req, res) {
             name,
             email,
             message,
+            input: { name, email, message },
+            inputs: { name, email, message },
+            data: { name, email, message },
+            workflow: { input: { name, email, message } },
             timestamp: new Date().toISOString(),
             source: 'albertsimpleportfolio'
           })
